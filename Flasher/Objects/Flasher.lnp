@@ -1,3 +1,4 @@
-".\Objects\main.obj" 
+".\Objects\main.obj",
+".\Objects\Delay.obj" 
 TO ".\Objects\Flasher" 
 PRINT(".\Listings\Flasher.m51") RAMSIZE(256) 

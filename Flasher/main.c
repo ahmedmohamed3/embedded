@@ -1,38 +1,38 @@
 #include <reg52.h>
-
+#include "Port.h"
+#include "Delay.h"
 /*
 *Author: ahmed mohamed
 *Desc: output 5 Volt at port 3 pin 0
 */
 
-//initializing the functions 
-void init();
-void run();
-
-//defining the global variables 
-sbit LED= P3^0;
-sbit BUTTON= P2^0;
 
 void main(void){
 	//initilize 
-	void init();
+	onInit();
 	//do the logic 
-	void run();
+  run();
 }
-void init(){
-	//the led is output and botton is input
+void onInit(){
+	//led is output 
 	LED=0;
+	//button is input
 	BUTTON=1;
 }
 void run(){
 	while(1){
-		if(BUTTON==1){
+		if(BUTTON == 0){
 			//reads the groung
-			LED=1;
+			flash();
 		}else{
 			LED=0;
 		}
 	}
 }
 
-
+void flash(){
+	delay_s(1);
+	LED=1;
+	delay_s(1);
+	LED=0;
+}
